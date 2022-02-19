@@ -15,9 +15,15 @@
    1.2- Body Element
 * 2- Section Style
    2.0- App
+   2.1- Start
 * 3- Common Style
    3.0- Container
-   3.1- 
+   3.1- Card
+   3.2- Text size
+   3.3- Text Color
+   3.4- Button
+   3.5- Button Color
+   3.6- Button Size
 */
 /* 
 /** 1- Genral Style */
@@ -37,6 +43,7 @@
   --color-dark-yellow: #cd8d16;
   --color-blue: #30c4be;
   --color-dark-blue: #128c89;
+  --shadow: 6px
 }
 /** 1.2- Body Element */
 body{
@@ -51,8 +58,47 @@ body{
   justify-content: center;
   align-items: center;
 }
-
-
+/** 2.1- Start */
+.start{
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.start__header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start__players{
+  background-color: var(--color-bg-dark);
+  padding: .5rem;
+  display: flex;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: .8rem;
+  -webkit-border-radius: .8rem;
+  -moz-border-radius: .8rem;
+  -ms-border-radius: .8rem;
+  -o-border-radius: .8rem;
+}
+.start__players span{
+  flex-grow: 1;
+  cursor: pointer;
+  padding: .8rem .5rem;
+  border-radius: .7rem;
+  -webkit-border-radius: .7rem;
+  -moz-border-radius: .7rem;
+  -ms-border-radius: .7rem;
+  -o-border-radius: .7rem;
+}
+.start__players--active{
+  background-color: var(--color-gray);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+.start__btn-group{
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
 
 
 
@@ -69,4 +115,98 @@ body{
   max-width: 500px;
   width: 100%;
   padding: 1rem;
+}
+/** 3.1- Card */
+.card{
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  color: #FFF;
+  text-align: center;
+  background-color: var(--color-bg-light);
+  border-radius: .8rem;
+  -webkit-border-radius: .8rem;
+  -moz-border-radius: .8rem;
+  -ms-border-radius: .8rem;
+  -o-border-radius: .8rem;
+}
+/** 3.2- Text size */
+.text-lg{
+  font-size: 1.25rem;
+}
+.text-xl{
+  font-size: 1.5rem;
+}
+.text-2xl{
+  font-size: 1.725rem;
+}
+/** 3.3- Text Color */
+.text-light{
+  color: var(--color-dark-gray);
+}
+.text-blue{
+  color: var(--color-blue);
+}
+.text-yellow{
+  color: var(--color-yellow);
+}
+/** 3.4- Button */
+.btn{
+  background-color: var(--color-gray);
+  border: none;
+  font-size: 1.125rem;
+  font-weight: bold;
+  padding: .7rem 1.4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--color-bg-light);
+  margin-bottom: .5rem;
+  box-shadow: 0 var(--shadow) 0 var(--color-dark-gray);
+  border-radius: .6rem;
+  -webkit-border-radius: .6rem;
+  -moz-border-radius: .6rem;
+  -ms-border-radius: .6rem;
+  -o-border-radius: .6rem;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+}
+.btn:hover{
+  --shadow: 8px;
+  transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+}
+.btn:active{
+  --shadow: 4px;
+  transform: translateY(2px);
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  -o-transform: translateY(2px);
+}
+/** 3.5- Button Color */
+.btn-yellow{
+  background-color: var(--color-yellow);
+  box-shadow: 0 var(--shadow) 0 var(--color-dark-yellow);
+}
+.btn-blue{
+  background-color: var(--color-blue);
+  box-shadow: 0 var(--shadow) 0 var(--color-dark-blue);
+}
+/** 3.6- Button Size */
+.btn-sm{
+  --shadow: 4px;
+}
+.btn-sm:hover{
+  --shadow: 6px;
+}
+.btn-sm:active{
+  --shadow: 3px;
 }
