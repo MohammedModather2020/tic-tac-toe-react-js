@@ -16,6 +16,7 @@
 * 2- Section Style
    2.0- App
    2.1- Start
+   2.2- Board 
    * 3- Common Style
    3.0- Container
    3.1- Card
@@ -101,8 +102,46 @@ body{
   flex-direction: column;
   gap: .7rem;
 }
-
-
+/** 2.2- Board */
+.board__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.board_turn{
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  padding: .5rem .7rem;
+  background-color: var(--color-bg-light);
+  border-radius: .3rem;
+  -webkit-border-radius: .3rem;
+  -moz-border-radius: .3rem;
+  -ms-border-radius: .3rem;
+  -o-border-radius: .3rem;
+}
+.board__restart svg{
+  height: 20px;
+  display: flex;
+  align-items: center;
+  transform-origin: center;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+}
+.board__restart:active svg{
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
 
 
 

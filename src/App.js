@@ -5,7 +5,7 @@ function App() {
   return (
     <div className='app-wrapper'>
       <div className='container'>
-        <Start />
+        {/* <Start /> */}
         <Board />
       </div>
     </div>
