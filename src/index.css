@@ -16,7 +16,7 @@
 * 2- Section Style
    2.0- App
    2.1- Start
-* 3- Common Style
+   * 3- Common Style
    3.0- Container
    3.1- Card
    3.2- Text size
@@ -24,6 +24,8 @@
    3.4- Button
    3.5- Button Color
    3.6- Button Size
+   3.7- Icons Size
+   3.8- Icons Color 
 */
 /* 
 /** 1- Genral Style */
@@ -99,7 +101,6 @@ body{
   flex-direction: column;
   gap: .7rem;
 }
-
 
 
 
@@ -209,4 +210,32 @@ body{
 }
 .btn-sm:active{
   --shadow: 3px;
+}
+/** 3.7- Icons Size */
+.icon{
+  display: inline-block;
+}
+.icon svg{
+  fill: var(--color-gray);
+  height: 50px;
+  width: 50px;
+  vertical-align: middle;
+}
+.icon-sm svg{
+  height: 30px;
+  width: 50px;
+}
+.icon-lg svg{
+  height: 65px;
+  width: 65px;
+}
+/** 3.8- Icons Color */
+.icon-yellow svg{
+  fill: var(--color-yellow);
+}
+.icon-blue svg{
+  fill: var(--color-blue);
+}
+.icon-dark svg{
+  fill: var(--color-bg-dark);
 }
