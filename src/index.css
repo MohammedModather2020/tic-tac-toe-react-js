@@ -27,6 +27,8 @@
    3.6- Button Size
    3.7- Icons Size
    3.8- Icons Color 
+   3.9- Shadow
+   3.10 Background Color
 */
 /* 
 /** 1- Genral Style */
@@ -161,6 +163,19 @@ body{
 .board__body .active.shadow-yellow{
   background-color: var(--color-yellow);
 }
+.board__footer{
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+}
+.board__footer .card{
+  height: 90px;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
 
 
 
@@ -206,6 +221,14 @@ body{
 }
 .text-yellow{
   color: var(--color-yellow);
+}
+.bg-blue.text-light,
+.bg-blue .text-light,
+.bg-yellow.text-light,
+.bg-yellow .text-light,
+.bg-light.text-light,
+.bg-light .text-light{
+  color: var(--color-bg-light);
 }
 /** 3.4- Button */
 .btn{
@@ -303,4 +326,17 @@ body{
 }
 .shadow-yellow{
   box-shadow: 0 8px 0 var(--color-yellow-blue);
+}
+/** 3.10 Background Color */
+.bg-light{
+  background-color: var(--color-gray);
+  color: var(--color-bg-dark);
+}
+.bg-yellow{
+  background-color: var(--color-yellow);
+  color: var(--color-bg-dark);
+}
+.bg-blue{
+  background-color: var(--color-blue);
+  color: var(--color-bg-dark);
 }

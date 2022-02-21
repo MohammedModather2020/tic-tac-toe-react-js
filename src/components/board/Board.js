@@ -43,7 +43,20 @@ export default function Board() {
           />
         ))}
       </div>
-      <div className='board__footer'></div>
+      <div className='board__footer'>
+        <div className="card bg-blue">
+          <p className='text-light'>x (you)</p>
+          <strong className='text-2xl'>10</strong>
+        </div>
+        <div className="card bg-light">
+          <p className='text-light'>ties</p>
+          <strong className='text-2xl'>20</strong>
+        </div>
+        <div className="card bg-yellow">
+          <p className='text-light'>o (cpu)</p>
+          <strong className='text-2xl'>10</strong>
+        </div>
+      </div>
     </div>
   );
 }
