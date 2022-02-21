@@ -17,6 +17,9 @@
    2.0- App
    2.1- Start
    2.2- Board 
+   2.3- Modal 
+   2.4- Score 
+   2.5- Restart 
    * 3- Common Style
    3.0- Container
    3.1- Card
@@ -176,9 +179,59 @@ body{
   align-items: center;
   gap: 0.5rem;
 }
-
-
-
+/** 2.3- Modal  */
+.modal{
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+}
+.modal__content{
+  width: 100%;
+  background-color: var(--color-bg-light);
+}
+/** 2.4- Score  */
+.score{
+  text-align: center;
+  color: var(--color-gray);
+  text-transform: uppercase;
+}
+.score__title{
+  font-size: 2rem;
+  display: flex;
+  gap: .4rem;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+.score__btns{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+/** 2.5- Restart  */
+.restart{
+  text-align: center;
+  color: var(--color-gray);
+  text-transform: uppercase;
+}
+.restart__title{
+  font-size: 2rem;
+  display: flex;
+  gap: .4rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.restart__btns{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
 /* * 3- Common Style */
 /**   3.0- Container */
 .container{
