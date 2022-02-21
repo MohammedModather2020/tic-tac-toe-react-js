@@ -142,9 +142,25 @@ body{
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
 }
-
-
-
+.board__body{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+}
+.board__body .card{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-inline: .7rem;
+}
+.board__body .active.shadow-blue{
+  background-color: var(--color-blue);
+}
+.board__body .active.shadow-yellow{
+  background-color: var(--color-yellow);
+}
 
 
 
@@ -152,7 +168,7 @@ body{
 /**   3.0- Container */
 .container{
   margin-inline: auto;
-  max-width: 500px;
+  max-width: 400px;
   width: 100%;
   padding: 1rem;
 }
@@ -277,4 +293,14 @@ body{
 }
 .icon-dark svg{
   fill: var(--color-bg-dark);
+}
+/** 3.9- Shadow */
+.shadow-gray{
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+.shadow-blue{
+  box-shadow: 0 8px 0 var(--color-dark-blue);
+}
+.shadow-yellow{
+  box-shadow: 0 8px 0 var(--color-yellow-blue);
 }

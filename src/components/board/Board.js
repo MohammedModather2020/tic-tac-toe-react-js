@@ -1,8 +1,10 @@
 import React from 'react';
 import OIcon from '../icons/Oicon';
 import XIcon from '../icons/Xicon';
+import BoardCard from './BoardCard';
 
 export default function Board() {
+  const squars = ['', 'o', 'x', '', 'o', 'x', '', '', ''];
   return (
     <div className='board'>
       <div className='board__header'>
@@ -31,7 +33,16 @@ export default function Board() {
           </button>
         </div>
       </div>
-      <div className='board__body'></div>
+      <div className='board__body'>
+        {squars.map((squar, index) => (
+          <BoardCard
+            key={index}
+            index={index}
+            user={squar}
+            active={index === 5}
+          />
+        ))}
+      </div>
       <div className='board__footer'></div>
     </div>
   );
