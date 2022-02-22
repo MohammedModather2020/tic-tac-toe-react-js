@@ -29,17 +29,17 @@ export default function Start() {
             <OIcon color={activeUser === 'o' ? 'dark' : 'light'} />
           </span>
         </div>
-        <p className='text-light'>Remember: x goes first</p>
+        <p className='text-light'>Remember: ( X ) goes first</p>
       </div>
       <div className='start__btn-group'>
         <button
           className='btn btn-yellow'
           onClick={() => changePlayMode('cpu')}
         >
-          New game (vs CPU)
+          Start New Game (vs CPU)
         </button>
         <button className='btn btn-blue' onClick={() => changePlayMode('user')}>
-          New game (vs Player)
+          Start New Game (vs Player)
         </button>
       </div>
     </div>

@@ -1,8 +1,8 @@
 /* 
 * Template Name             : Tic Tac Toe
 * Start Date                : 17-2-2022
-* End Date                  : 
-* Last Update               : 
+* End Date                  : 22-2-2022
+* Last Update               : 22-2-2022
 * Version                   : 1.0.0
 * URL                       : https://mohammedmodather2020.github.io/tic-tac-toe-react-js
 * GitHub URL                : https://github.com/MohammedModather2020/tic-tac-toe-react-js.git
@@ -55,7 +55,7 @@
 }
 /** 1.2- Body Element */
 body{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Cairo', sans-serif;
   background-color: var(--color-bg-dark);
 }
 /** 2- Section Style */
@@ -177,7 +177,7 @@ body{
   text-transform: uppercase;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0rem;
 }
 /** 2.3- Modal  */
 .modal{
@@ -202,10 +202,9 @@ body{
 .score{
   text-align: center;
   color: var(--color-gray);
-  text-transform: uppercase;
 }
 .score__title{
-  font-size: 2rem;
+  font-size: 1.3rem;
   display: flex;
   gap: .4rem;
   align-items: center;
@@ -225,7 +224,7 @@ body{
   text-transform: uppercase;
 }
 .restart__title{
-  font-size: 2rem;
+  font-size: 1.3rem;
   display: flex;
   gap: .4rem;
   align-items: center;
@@ -243,6 +242,7 @@ body{
 .container{
   margin-inline: auto;
   max-width: 400px;
+  min-width: 400px;
   width: 100%;
   padding: 1rem;
 }
@@ -293,10 +293,9 @@ body{
 .btn{
   background-color: var(--color-gray);
   border: none;
-  font-size: 1.125rem;
+  font-size: .9rem;
   font-weight: bold;
   padding: .7rem 1.4rem;
-  text-transform: uppercase;
   cursor: pointer;
   font-family: inherit;
   color: var(--color-bg-light);
