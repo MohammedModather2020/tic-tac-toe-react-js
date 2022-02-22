@@ -9,11 +9,13 @@ export default function Board() {
   const { squares, xNext, ties, winner, winnerLine, playMode, activeUser } =
     useContext(GameContext);
   const { showModal, setModalMode } = useContext(ModalContext);
+  //* --------------------------------------------------------------------------------->
   // reset game
   const resetGame = () => {
     showModal();
     setModalMode('start');
   };
+  //* --------------------------------------------------------------------------------->
   // check is user
   const checkUser = (user) => {
     if (playMode === 'cpu') {
