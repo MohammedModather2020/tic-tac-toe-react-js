@@ -8,6 +8,8 @@ const lines = [
   [0, 4, 8],
   [2, 4, 6],
 ];
+//* --------------------------------------------------------------------------------->
+// calc winner
 export const calcWinner = (squares) => {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
@@ -25,7 +27,7 @@ export const calcWinner = (squares) => {
   }
   return null;
 };
-
+//* --------------------------------------------------------------------------------->
 // play with computer
 export const calcBestMove = (squares, player) => {
   const getArrayDuplicatedCount = (arr) => {

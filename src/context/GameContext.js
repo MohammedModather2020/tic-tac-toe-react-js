@@ -15,20 +15,21 @@ const GameState = (props) => {
   const [winner, setWinner] = useState(null);
   const [winnerLine, setWinnerLine] = useState(null);
   const [ties, setTies] = useState({ x: 0, o: 0, no: 0 });
-
+  //* --------------------------------------------------------------------------------->
   useEffect(() => {
-    checkNoWinner();
+    checkNoWinner(); // trigger check round each render state
     const currentUser = xNext ? 'o' : 'x';
     if (playMode === 'cpu' && currentUser !== activeUser && !winner) {
       cpuNext(squares);
     }
   }, [xNext, winner, screen]);
-
+  //* --------------------------------------------------------------------------------->
   // choose user or cpu
   const changePlayMode = (mode) => {
     setPlayMode(mode);
     setScreen('game');
   };
+  //* --------------------------------------------------------------------------------->
   // handel click user or cpu play
   const handelSquaresClick = (index) => {
     if (squares[index] || winner) return;
@@ -43,6 +44,7 @@ const GameState = (props) => {
     // check winner
     checkWinner(newSquares);
   };
+  //* --------------------------------------------------------------------------------->
   //check winner
   const checkWinner = (square) => {
     const isWinner = calcWinner(square);
@@ -57,6 +59,7 @@ const GameState = (props) => {
       setModalMode('winner');
     }
   };
+  //* --------------------------------------------------------------------------------->
   // check is no winner
   const checkNoWinner = () => {
     const moves = squares.filter((square) => square === '');
@@ -69,6 +72,7 @@ const GameState = (props) => {
       setModalMode('winner');
     }
   };
+  //* --------------------------------------------------------------------------------->
   // out or restart of game
   const handelReset = () => {
     setSquares(new Array(9).fill(''));
@@ -80,6 +84,7 @@ const GameState = (props) => {
     hideModal();
     setScreen('start');
   };
+  //* --------------------------------------------------------------------------------->
   // handel new round game
   const handelNextRound = () => {
     setSquares(new Array(9).fill(''));
@@ -88,6 +93,7 @@ const GameState = (props) => {
     setWinnerLine(null);
     hideModal();
   };
+  //* --------------------------------------------------------------------------------->
   // handel paly with computer
   const cpuNext = (square) => {
     const bestMove = calcBestMove(square, activeUser === 'x' ? 'o' : 'x');

@@ -5,8 +5,11 @@ const ModalContext = createContext();
 const ModalState = (props) => {
   const [show, setShow] = useState(false);
   const [mode, setMode] = useState('winner'); // winner || start
-  // change toggle modal state
+  //* --------------------------------------------------------------------------------->
+  // show modal
   const showModal = () => setShow(true);
+  //* --------------------------------------------------------------------------------->
+  // hide modal
   const hideModal = () => setShow(false);
   return (
     <ModalContext.Provider
