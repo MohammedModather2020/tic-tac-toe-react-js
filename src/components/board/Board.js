@@ -8,10 +8,10 @@ import BoardCard from './BoardCard';
 export default function Board() {
   const { squares, xNext, ties, winner, winnerLine, playMode, activeUser } =
     useContext(GameContext);
-  const { toggleModal, setModalMode } = useContext(ModalContext);
+  const { showModal, setModalMode } = useContext(ModalContext);
   // reset game
   const resetGame = () => {
-    toggleModal();
+    showModal();
     setModalMode('start');
   };
   // check is user
