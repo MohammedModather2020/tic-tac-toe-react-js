@@ -15,7 +15,7 @@ export default function Win() {
               winner === 'o' ? 'text-yellow' : 'text-blue'
             }`}
           >
-            {winner === 'x' ? <XIcon /> : <OIcon />} Takes the round
+            {winner === 'x' ? <XIcon  size='sm'/> : <OIcon size='sm'/>} Takes the round
           </h3>
         </>
       ) : (
