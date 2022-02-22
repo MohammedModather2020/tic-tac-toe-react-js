@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GameContext } from '../../context/GameContext';
+import { ModalContext } from '../../context/ModalContext';
 import OIcon from '../icons/Oicon';
 import XIcon from '../icons/Xicon';
 import BoardCard from './BoardCard';
 
 export default function Board() {
-  const squars = ['', 'o', 'x', '', 'o', 'x', '', '', ''];
+  const { squares, xNext, ties, winner, winnerLine, playMode, activeUser } =
+    useContext(GameContext);
+  const { toggleModal, setModalMode } = useContext(ModalContext);
+  // reset game
+  const resetGame = () => {
+    toggleModal();
+    setModalMode('start');
+  };
+  // check is user
+  const checkUser = (user) => {
+    if (playMode === 'cpu') {
+      if (user === activeUser) {
+        return '(you)';
+      } else {
+        return '(cpu)';
+      }
+    }
+  };
   return (
     <div className='board'>
       <div className='board__header'>
@@ -13,10 +32,15 @@ export default function Board() {
           <OIcon />
         </div>
         <div className='board_turn'>
-          <XIcon color='light' size='sm' /> turn
+          {!xNext ? (
+            <XIcon color='light' size='sm' />
+          ) : (
+            <OIcon color='light' size='sm' />
+          )}
+          turn
         </div>
         <div>
-          <button className='btn btn-sm board__restart'>
+          <button className='btn btn-sm board__restart' onClick={resetGame}>
             <svg
               aria-hidden='true'
               focusable='false'
@@ -34,27 +58,27 @@ export default function Board() {
         </div>
       </div>
       <div className='board__body'>
-        {squars.map((squar, index) => (
+        {squares.map((square, index) => (
           <BoardCard
             key={index}
             index={index}
-            user={squar}
-            active={index === 5}
+            user={square}
+            active={winner && winnerLine && winnerLine.includes(index)}
           />
         ))}
       </div>
       <div className='board__footer'>
-        <div className="card bg-blue">
-          <p className='text-light'>x (you)</p>
-          <strong className='text-2xl'>10</strong>
+        <div className='card bg-blue'>
+          <p className='text-light'>x {checkUser('x')}</p>
+          <strong className='text-2xl'>{ties.x}</strong>
         </div>
-        <div className="card bg-light">
+        <div className='card bg-light'>
           <p className='text-light'>ties</p>
-          <strong className='text-2xl'>20</strong>
+          <strong className='text-2xl'>{ties.x + ties.o}</strong>
         </div>
-        <div className="card bg-yellow">
-          <p className='text-light'>o (cpu)</p>
-          <strong className='text-2xl'>10</strong>
+        <div className='card bg-yellow'>
+          <p className='text-light'>o {checkUser('o')}</p>
+          <strong className='text-2xl'>{ties.o}</strong>
         </div>
       </div>
     </div>
