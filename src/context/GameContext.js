@@ -6,7 +6,7 @@ import { ModalContext } from './ModalContext';
 const GameContext = createContext();
 
 const GameState = (props) => {
-  const { toggleModal, setModalMode } = useContext(ModalContext);
+  const { showModal, hideModal, setModalMode } = useContext(ModalContext);
   const [screen, setScreen] = useState('start'); // start || game
   const [activeUser, setActiveUser] = useState('x'); // x || o
   const [playMode, setPlayMode] = useState('user'); // user || cpu
@@ -53,19 +53,19 @@ const GameState = (props) => {
       const oldTies = { ...ties };
       oldTies[isWinner.winner] += 1;
       setTies(oldTies);
-      toggleModal();
+      showModal();
       setModalMode('winner');
     }
   };
   // check is no winner
   const checkNoWinner = () => {
     const moves = squares.filter((square) => square === '');
-    if (moves.length === 0) {
+    if (moves.length === 0 && winnerLine === null) {
       const oldTies = { ...ties };
       oldTies['no'] += 1;
       setTies(oldTies);
       setWinner('no');
-      toggleModal();
+      showModal();
       setModalMode('winner');
     }
   };
@@ -77,7 +77,7 @@ const GameState = (props) => {
     setWinnerLine(null);
     setActiveUser('x');
     setTies({ x: 0, o: 0 });
-    toggleModal();
+    hideModal();
     setScreen('start');
   };
   // handel new round game
@@ -86,7 +86,7 @@ const GameState = (props) => {
     setXNext(winner === 'x');
     setWinner(null);
     setWinnerLine(null);
-    toggleModal();
+    hideModal();
   };
   // handel paly with computer
   const cpuNext = (square) => {
